@@ -15,9 +15,10 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
-                  <form class="user">
+
+                  <form class="user" method="post" action="<?= base_url('auth'); ?>">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input type="text" class="form-control form-control-user" id="email" placeholder="Enter Email Address...">
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
@@ -35,7 +36,7 @@
                     <a href="index.html" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Login with Google
                     </a>
-                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                    <a href="#" class="btn btn-facebook btn-user btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                     </a>
                   </form>
@@ -44,7 +45,7 @@
                     <a class="small" href="forgot-password.html">Forgot Password?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="<?= base_url('auth/register') ?>">Create an Account!</a>
+                    <a class="small" href="<?= base_url('index.php/auth/register'); ?>">Create an Account!</a>
                   </div>
                 </div>
               </div>
