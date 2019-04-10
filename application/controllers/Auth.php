@@ -21,10 +21,15 @@ class Auth extends CI_Controller {
     
     public function register()
     {
-        $data['title'] = 'Registration Page';
-        $this->load->view('auth/_templates/auth_header', $data);
-        $this->load->view('auth/register');
-        $this->load->view('auth/_templates/auth_footer');
+        if($this->form_validation->run()==false){
+            $data['title'] = 'Registration Page';
+            $this->load->view('auth/_templates/auth_header', $data);
+            $this->load->view('auth/register');
+            $this->load->view('auth/_templates/auth_footer');
+        }
+        else{
+            redirect('auth');
+        }
     }
 
     public function logout()
