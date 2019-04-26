@@ -28,6 +28,7 @@ class User extends CI_Controller
             'namaKaryawan' => $this->input->post('namak'),
             'passkaryawan' => $this->input->post('passk'),
             'usernameK' => $this->input->post('usernamek'),
-            'emailK' => $this->input->post('emailk');];
+            'emailK' => $this->input->post('emailk')
+        ];
     }
 }

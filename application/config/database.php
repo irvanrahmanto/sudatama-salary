@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => 'hercules.hideserver.net',
+	'username' => 'sidelear_sisfo_08',
+	'password' => 'sidelear_sisfo_08',
 	'database' => 'sidelear_sisfo_08',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
