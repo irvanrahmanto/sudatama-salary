@@ -7,14 +7,15 @@ class Admin extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Gaji_model');
-        $this->load->model('User_model');
+        $this->load->model('M_admin');
+        $this->load->model('M_user');
     }
 
     public function index()
     {
         $data['title'] = 'Admin Dashboard';
-        // $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('émail')])->row_array();
+        $data['karyawan'] = $this->M_admin->viewkaryawan();
+        $data['gajikaryawan'] = $this->M_admin->viewgaji();
 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
@@ -23,30 +24,38 @@ class Admin extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function admin()
+    public function tambahgaji()
     {
-        $data = [
-            'idAdmin' => $this->input->post('id'),
-            'namaAdmin' => $this->input->post('namaadmin'),
-            'passAdmin' => $this->input->post('passadmin'),
-            'kontakAdmin' => $this->input->post('kontakadmin')
-        ];
-    }
-
-    public function gaji()
-    {
-        $data = [
-            'id_gaji' => $this->input->post('id'),
-            'gaji_default' => $this->input->post('gaji'),
-            'gaji_lembur' => $this->input->post('lembur'),
-            'totalgaji' => $this->input->post('total')
-        ];
-
-        $inputgaji = $this->Gaji_model->inputgaji($data);
-        if ($inputgaji) {
-            $this->session->set_flashdata('message', 'Input gaji berhasil');
-        } else {
-            $this->session->set_flashdata('message', 'Input gaji gagal');
+        $confirm = $this->input->post('submit');
+        $input = $this->M_admin->validation("addgaji");
+        if ($confirm) {
+            if ($input) {
+                $this->M_admin->addgaji();
+                // $this->session->set_flashdata('message', 'Gaji berhasil diinputkan');
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Gaji berhasil diinputkan');
+                redirect('admin');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Maaf! Gaji gagal diinputkan');
+            }
         }
+        $this->load->view('admin/index');
     }
+
+    // public function gaji()
+    // {
+    //     $data = [
+    //         'id_gaji' => $this->input->post('id'),
+    //         'gaji_default' => $this->input->post('gaji'),
+    //         'gaji_lembur' => $this->input->post('lembur'),
+    //         'totalgaji' => $this->input->post('total')
+    //     ];
+
+    //     $inputgaji = $this->Gaji_model->inputgaji($data, 'kelolagaji');
+    //     if ($inputgaji) {
+    //         $this->session->set_flashdata('message', 'Input gaji berhasil');
+    //     } else {
+    //         $this->session->set_flashdata('message', 'Input gaji gagal');
+    //     }
+    //     redirect('admin');
+    // }
 }
