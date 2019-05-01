@@ -41,21 +41,16 @@ class Admin extends CI_Controller
         $this->load->view('admin/index');
     }
 
-    // public function gaji()
-    // {
-    //     $data = [
-    //         'id_gaji' => $this->input->post('id'),
-    //         'gaji_default' => $this->input->post('gaji'),
-    //         'gaji_lembur' => $this->input->post('lembur'),
-    //         'totalgaji' => $this->input->post('total')
-    //     ];
+    public function carikaryawan()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['karyawanku'] = $this->M_admin->cari($keyword);
+        // $data['gajikaryawan'] = $this->M_admin->viewgaji();
 
-    //     $inputgaji = $this->Gaji_model->inputgaji($data, 'kelolagaji');
-    //     if ($inputgaji) {
-    //         $this->session->set_flashdata('message', 'Input gaji berhasil');
-    //     } else {
-    //         $this->session->set_flashdata('message', 'Input gaji gagal');
-    //     }
-    //     redirect('admin');
-    // }
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/index', $data);
+        $this->load->view('templates/footer');
+    }
 }

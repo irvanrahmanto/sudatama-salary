@@ -66,22 +66,10 @@
                     <label for="exampleInputEmail1">Nama Pegawai</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<?= $pg['namaKaryawan']; ?>" disabled>
                   </div>
-                  <!-- <div class="form-group">
-                                                                                            <label for="exampleFormControlSelect1">Status pegawai</label>
-                                                                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                                                              <option>-</option>
-                                                                                              <option>Pegawai tetap</option>
-                                                                                              <option>Pegawai kontrak</option>
-                                                                                            </select>
-                                                                                          </div> -->
                   <div class="form-group">
                     <label for="exampleInputEmail1">Gaji pokok</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Rp. 4.000.000" Disabled>
                   </div>
-                  <!-- <div class="form-group">
-                                <label for="exampleInputEmail1">Presensi</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="< $dataabsen['idJam']; ?>" Disabled>
-                              </div> -->
                   <label for="exampleInputEmail1">Absensi</label>
                   <div class="input-group">
                     <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="<= $absen['tanggal']; ?>" disabled>
@@ -100,7 +88,7 @@
                   </div>
                   <div class="form-group mt-2">
                     <label for="exampleInputEmail1">Masukkan gaji</label>
-                    <input name="gaji" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input gaji">
+                    <input name="gaji" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Input gaji" autocomplete="off">
                   </div>
                   <input class="btn btn-success" type="submit" name="submit" value="confirm">
                   <a href="<?php echo base_url(); ?>"><input class="btn btn-warning" type="button" value="cancel"></a>

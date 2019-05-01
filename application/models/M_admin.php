@@ -52,4 +52,15 @@ class M_admin extends CI_Model
 
         $this->db->insert('kelolagaji', $data);
     }
+
+    public function cari($keyword)
+    {
+        // $keyword = $_POST['keyword'];
+        // $query = $this->db->query("SELECT * FROM karyawan WHERE nama LIKE :keyword");
+        // $this->db->bind('keyword', '%$keyword%');
+        // return $this->db->resultSet();
+        $this->db->like('namaKaryawan', $keyword);
+        $query = $this->db->get('karyawan');
+        return $query->result();
+    }
 }

@@ -13,9 +13,9 @@
              <div class="container-fluid">
                <div class="row">
                  <div class="col-md-12">
-                   <form class="form-inline my-2 my-lg-0">
-                     <input class="form-control mr-sm-2" type="search" placeholder="Search your NIP here" aria-label="Search">
-                     <button class="btn btn-outline-white text-white bg-primary my-2 my-sm-0" type="submit">Search</button>
+                   <form class="form-inline my-2 my-lg-0" method="post" action="<?= base_url('admin/carikaryawan'); ?>">
+                     <input name="keyword" id="keyword" class="form-control mr-sm-2" type="search" placeholder="Search your NIP here" aria-label="Search" autocomplete="off">
+                     <button class="btn btn-outline-white text-white bg-primary my-2 my-sm-0" type="submit" id="tombolcari" > Search</button>
                    </form>
                  </div>
                </div>
@@ -79,12 +79,12 @@
                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<= $gajikary['gaji_default']; ?>" Disabled>
                          </div>
                          <!-- <div class="form-group">
-                                                 <label for="exampleInputEmail1">Absen</label>
-                                                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="32 %" Disabled>
-                                                 <div class="input-group-append">
-                                                   <span class="input-group-text">Hours</span>
-                                                 </div>
-                                               </div> -->
+                                                           <label for="exampleInputEmail1">Absen</label>
+                                                           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="32 %" Disabled>
+                                                           <div class="input-group-append">
+                                                             <span class="input-group-text">Hours</span>
+                                                           </div>
+                                                         </div> -->
                          <label for="exampleInputEmail1">Absensi</label>
                          <div class="input-group">
                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" disabled>
