@@ -18,7 +18,8 @@ class M_admin extends CI_Model
         // return $this->db->get('kelolagaji')->result_array();
         $this->db->select('gaji_default');
         $this->db->from('kelolagaji');
-        $query = $this->db->get()->result_array();
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
     public function validation()

@@ -15,7 +15,7 @@
                  <div class="col-md-12">
                    <form class="form-inline my-2 my-lg-0" method="post" action="<?= base_url('admin/carikaryawan'); ?>">
                      <input name="keyword" id="keyword" class="form-control mr-sm-2" type="search" placeholder="Search your NIP here" aria-label="Search" autocomplete="off">
-                     <button class="btn btn-outline-white text-white bg-primary my-2 my-sm-0" type="submit" id="tombolcari" > Search</button>
+                     <button class="btn btn-outline-white text-white bg-primary my-2 my-sm-0" type="submit" id="tombolcari"> Search</button>
                    </form>
                  </div>
                </div>
@@ -76,18 +76,11 @@
                          <!-- ?php endforeach; ?> -->
                          <div class="form-group">
                            <label for="exampleInputEmail1">Gaji</label>
-                           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="<= $gajikary['gaji_default']; ?>" Disabled>
+                           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="2.000.000" Disabled>
                          </div>
-                         <!-- <div class="form-group">
-                                                           <label for="exampleInputEmail1">Absen</label>
-                                                           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="32 %" Disabled>
-                                                           <div class="input-group-append">
-                                                             <span class="input-group-text">Hours</span>
-                                                           </div>
-                                                         </div> -->
                          <label for="exampleInputEmail1">Absensi</label>
                          <div class="input-group">
-                           <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" disabled>
+                           <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="20" disabled>
                            <div class="input-group-append">
                              <!-- <span class="input-group-text">$</span> -->
                              <span class="input-group-text">/20 Day</span>
@@ -95,7 +88,7 @@
                          </div>
                          <div class="input-group mt-1">
                            <!-- <label for="exampleInputEmail1">Absensi</label> -->
-                           <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" disabled>
+                           <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="100" disabled>
                            <div class="input-group-append">
                              <!-- <span class="input-group-text">$</span> -->
                              <span class="input-group-text">/120 Hours/month</span>

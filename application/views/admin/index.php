@@ -31,18 +31,24 @@
               <td><?= $pg['idKaryawan']; ?></td>
               <td><?= $pg['namaKaryawan']; ?></td>
               <td><?= $pg['emailK']; ?></td>
+              <?php $i++; ?>
+            <?php endforeach; ?>
+            <!-- ?php var_dump($gajikaryawan) ?> -->
+            <?php foreach ($gajikaryawan as $gj) : ?>
               <td>
-                <= $gajikaryawan['gaji_default']; ?>
+                <!-- ?= $gajikaryawan['gaji_default']; ?> -->
+                <?= $gj['gaji_default']; ?>
               </td>
-              <td>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<?= $pg['idKaryawan'] ?>">
-                  Edit
-                </button>
-              </td>
-            </tr>
-            <?php $i++; ?>
-            <!-- < endforeach; ?> -->
-          <?php endforeach; ?>
+            <?php endforeach; ?>
+            <td>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<?= $pg['idKaryawan'] ?>">
+                Edit
+              </button>
+            </td>
+          </tr>
+          <!-- ?php $i++; ?> -->
+          <!-- < endforeach; ?> -->
+          <!-- ?php endforeach; ?> -->
         </tbody>
       </table>
 
@@ -72,7 +78,7 @@
                   </div>
                   <label for="exampleInputEmail1">Absensi</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="<= $absen['tanggal']; ?>" disabled>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="20" disabled>
                     <div class="input-group-append">
                       <!-- <span class="input-group-text">$</span> -->
                       <span class="input-group-text">/20 Day</span>
@@ -80,7 +86,7 @@
                   </div>
                   <div class="input-group mt-1">
                     <!-- <label for="exampleInputEmail1">Absensi</label> -->
-                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="<= $absen['idJam']; ?>" disabled>
+                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="100" disabled>
                     <div class="input-group-append">
                       <!-- <span class="input-group-text">$</span> -->
                       <span class="input-group-text">/120 Hours/month</span>
